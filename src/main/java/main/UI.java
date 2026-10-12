@@ -45,6 +45,7 @@ public class UI {
 
             case PLAY:
                 drawHUD();
+                drawScore();
                 break;
 
             case GAME_OVER:
@@ -114,18 +115,24 @@ public class UI {
         }
 
         int ballSize = gp.tileSize / 2;
-        int startX = gp.tileSize;
+        int startX = 0;
         int y = gp.tileSize * 15 + gp.tileSize / 2;
 
         for (int i = 0; i < gp.game.getLeben(); i++) {
             gc.drawImage(ball1, startX + i * ballSize, y, ballSize, ballSize);
         }
+        gc.setFill(Color.SILVER);
+        gc.fillRect(gp.screenWidth - gp.tileSize * 4, 0, 5, gp.screenHeight);
+    }
 
-        gc.setFill(Color.GRAY);
-        gc.fillRect(0, 0, gp.tileSize, gp.screenHeight);
+    public void drawScore() {
+        String text = String.valueOf(gp.game.score);
+        int x = gp.screenWidth - gp.tileSize / 2 * 7;
+        int y = gp.tileSize * 2;
+        gc.setFill(Color.WHITE);
 
-        gc.setFill(Color.GRAY);
-        gc.fillRect(gp.screenWidth - gp.tileSize, 0, gp.tileSize, gp.screenHeight);
+        gc.setFont(Font.font("System", FontWeight.BOLD, 20));
+        gc.fillText(text, x, y);
     }
 
     public void drawGameOver() {

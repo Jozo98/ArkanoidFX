@@ -22,7 +22,7 @@ public class KollisionsChecker {
     }
 
     public boolean trefferBildschirmLinksRechts(Ball ball) {
-        return ball.getPositionX() < gp.tileSize || ball.getPositionX() + ball.getSize() > gp.screenWidth - gp.tileSize;
+        return ball.getPositionX() < 0 || ball.getPositionX() + ball.getSize() > gp.screenWidth - gp.tileSize * 4;
     }
 
     public boolean trefferBildschirmOben(Ball ball) {

@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 
 public class Spieler extends Entitaet {
 
-    int startPosX = 288;
+    int startPosX = 240;
     int startPosY = 720;
     int playerWidth = gp.tileSize * 2;
     int playerHeight = gp.tileSize / 2;
@@ -27,9 +27,9 @@ public class Spieler extends Entitaet {
         geschwindigkeit = startGeschwindigkeit;
     }
     public void update() {
-        if (keyH.leftPressed && getPositionX() > gp.tileSize) {
+        if (keyH.leftPressed && getPositionX() > 0) {
             x -= geschwindigkeit;
-        } else if (keyH.rightPressed && getPositionX() + playerWidth < gp.screenWidth - 1 * gp.tileSize) {
+        } else if (keyH.rightPressed && getPositionX() + playerWidth < gp.screenWidth - 2 * gp.tileSize) {
             x += geschwindigkeit;
         }
         if (increaseEndTime > 0 && System.currentTimeMillis() > increaseEndTime) {

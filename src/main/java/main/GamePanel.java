@@ -10,13 +10,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class GamePanel extends Canvas implements Runnable {
 
     private static final int originalTitleSize = 16;
     private static final int scale = 3;
-    private static final int maxScreenCol = 14;
+    private static final int maxScreenCol = 16;
     private static final int maxScreenRow = 16;
 
     public static final int tileSize = originalTitleSize * scale;

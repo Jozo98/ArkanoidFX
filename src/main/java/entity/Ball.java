@@ -62,7 +62,7 @@ public class Ball extends Entitaet {
     public void pruefeKollisionBallBildschirm() {
         if (kollisionsChecker.trefferBildschirmLinksRechts(this)) {
             richtung = Math.PI - richtung;
-            x = Math.max(gp.tileSize, Math.min(gp.screenWidth - gp.tileSize - size, x));
+            x = Math.max(0, Math.min(gp.screenWidth - gp.tileSize * 2 - size, x));
         }
         if (kollisionsChecker.trefferBildschirmOben(this)) {
             richtung = -richtung;

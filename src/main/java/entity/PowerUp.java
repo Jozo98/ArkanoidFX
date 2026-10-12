@@ -41,7 +41,11 @@ public class PowerUp extends Entitaet {
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setFill(Color.WHITE);
+        if (this.type == 4) {
+            gc.setFill(Color.GREY);
+        }else {
+            gc.setFill(Color.WHITE);
+        }
         gc.fillRect(x, y, gp.tileSize / 2.0, gp.tileSize / 2.0);
     }
 
